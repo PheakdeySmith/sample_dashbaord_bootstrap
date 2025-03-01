@@ -21,6 +21,8 @@
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Default</li>
                     </ol>
                 </nav>
+
+
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                         <div class="input-group">
@@ -134,6 +136,13 @@
                                     </a>
                                 </li>
                             </ul>
+                            <div class="ms-md-auto p-3 mb-1">
+                                <div class="form-check form-switch ps-0 d-xl-block d-none">
+                                    <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)"
+                                        data-sharkid="__3">
+                                </div>
+                            </div>
+                            Dark Mode
                         </li>
                     </ul>
                 </div>

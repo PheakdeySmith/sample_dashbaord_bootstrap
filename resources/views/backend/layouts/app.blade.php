@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0082)https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/dashboards/default.html -->
 <html lang="en" class="">
 
 <head>
@@ -25,8 +24,11 @@
 
     <!-- Main CSS -->
     <link id="pagestyle" href="{{ asset('backend/assets') }}/css/soft-ui-dashboard.min.css" rel="stylesheet">
-    {{-- <script defer="" data-site="demos.creative-tim.com" src="{{ asset('backend/assets') }}/js/nepcha-analytics.js"></script> --}}
+    {{--
+    <script defer="" data-site="demos.creative-tim.com"
+        src="{{ asset('backend/assets') }}/js/nepcha-analytics.js"></script> --}}
 </head>
+
 <body class="g-sidenav-show  bg-gray-100">
     <!-- Extra details for Live View on GitHub Pages -->
 
@@ -52,6 +54,8 @@
     <script src="{{ asset('backend/assets') }}/js/smooth-scrollbar.min.js"></script>
     <script src="{{ asset('backend/assets') }}/js/fullcalendar.min.js"></script>
     <script src="{{ asset('backend/assets') }}/js/choices.min.js"></script>
+    <script src="{{ asset('backend/assets') }}/js/datatables.js"></script>
+
     <!-- Kanban scripts -->
     <script src="{{ asset('backend/assets') }}/js/dragula.min.js"></script>
     <script src="{{ asset('backend/assets') }}/js/jkanban.js"></script>
@@ -60,23 +64,14 @@
     <script src="{{ asset('backend/assets') }}/js/orbit-controls.js"></script>
     <script src="{{ asset('backend/assets') }}/js/leaflet.js"></script>
     <script src="{{ asset('backend/assets') }}/js/nouislider.min.js"></script>
+    <script src="{{ asset('backend/assets') }}/js/sweetalert.min.js"></script>
+    <script src="{{ asset('backend/assets') }}/js/sweet-alert.js"></script>
+
 
     @stack('scripts')
 
-    {{-- <script>
-        var win = navigator.platform.indexOf('Win') > -1;
-        if (win && document.querySelector('#sidenav-scrollbar')) {
-            var options = {
-                damping: '0.5'
-            }
-            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-        }
-    </script> --}}
-
-    <script async="" defer="" src="{{ asset('backend/assets') }}/js/buttons.js"></script>
-    <script src="{{ asset('backend/assets') }}/js/soft-ui-dashboard.min.js"></script>
-
-
-</body>
+    <script src="{{ asset('backend/assets') }}/js/buttons.js"></script>
 
 </html>
+</body>
+<script src="{{ asset('backend/assets') }}/js/soft-ui-dashboard.min.js"></script>

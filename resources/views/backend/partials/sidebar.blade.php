@@ -81,6 +81,7 @@
                     </ul>
                 </div>
             </li>
+
             <li class="nav-item mt-3">
                 <h6 class="ps-4  ms-2 text-uppercase text-xs font-weight-bolder opacity-6">PAGES</h6>
             </li>
@@ -88,16 +89,16 @@
             <li class="nav-item">
                 <a data-bs-toggle="collapse"
                    href="#accountExample"
-                   class="nav-link {{ Request::is('account*') || Request::is('setting*') ? 'active' : '' }}"
+                   class="nav-link {{ Request::is('account*') || Request::is('setting*') || Request::is('billing*') || Request::is('security*') || Request::is('invoice*')  ? 'active' : '' }}"
                    aria-controls="accountExample"
                    role="button"
-                   aria-expanded="{{ Request::is('account*') || Request::is('setting*') ? 'true' : 'false' }}">
+                   aria-expanded="{{ Request::is('account*') || Request::is('setting*') || Request::is('billing*') || Request::is('security*') || Request::is('invoice*') ? 'true' : 'false' }}">
                     <div class="icon icon-sm shadow-sm border-radius-md bg-white text-center d-flex align-items-center justify-content-center me-2">
                         <i class="ni ni-circle-08" aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">Account</span>
                 </a>
-                <div class="collapse {{ Request::is('account*') || Request::is('setting*') ? 'show' : '' }}" id="accountExample">
+                <div class="collapse {{ Request::is('account*') || Request::is('setting*') || Request::is('billing*') || Request::is('security*') || Request::is('invoice*') ? 'show' : '' }}" id="accountExample">
                     <ul class="nav ms-4 ps-3">
                         <li class="nav-item">
                             <a class="nav-link {{ Request::routeIs('setting') ? 'active' : '' }}"
@@ -106,101 +107,25 @@
                                 <span class="sidenav-normal">Settings</span>
                             </a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link "
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/account/billing.html">
-                                <span class="sidenav-mini-icon"> B </span>
-                                <span class="sidenav-normal"> Billing </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link "
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/account/invoice.html">
-                                <span class="sidenav-mini-icon"> I </span>
-                                <span class="sidenav-normal"> Invoice </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link "
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/account/security.html">
-                                <span class="sidenav-mini-icon"> S </span>
-                                <span class="sidenav-normal"> Security </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#pagesExamples"
-                    class="nav-link {{ Request::is('widget*') ? 'active' : '' }}" aria-controls="pagesExamples"
-                    role="button" aria-expanded="{{ Request::is('widget*') ? 'true' : 'false' }}">
-                    <div
-                        class="icon icon-sm shadow-sm border-radius-md bg-white text-center d-flex align-items-center justify-content-center  me-2">
-                        <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <title>office</title>
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                                    <g transform="translate(1716.000000, 291.000000)">
-                                        <g id="office" transform="translate(153.000000, 2.000000)">
-                                            <path class="color-background"
-                                                d="M12.25,17.5 L8.75,17.5 L8.75,1.75 C8.75,0.78225 9.53225,0 10.5,0 L31.5,0 C32.46775,0 33.25,0.78225 33.25,1.75 L33.25,12.25 L29.75,12.25 L29.75,3.5 L12.25,3.5 L12.25,17.5 Z"
-                                                opacity="0.6"></path>
-                                            <path class="color-background"
-                                                d="M40.25,14 L24.5,14 C23.53225,14 22.75,14.78225 22.75,15.75 L22.75,38.5 L19.25,38.5 L19.25,22.75 C19.25,21.78225 18.46775,21 17.5,21 L1.75,21 C0.78225,21 0,21.78225 0,22.75 L0,40.25 C0,41.21775 0.78225,42 1.75,42 L40.25,42 C41.21775,42 42,41.21775 42,40.25 L42,15.75 C42,14.78225 41.21775,14 40.25,14 Z M12.25,36.75 L7,36.75 L7,33.25 L12.25,33.25 L12.25,36.75 Z M12.25,29.75 L7,29.75 L7,26.25 L12.25,26.25 L12.25,29.75 Z M35,36.75 L29.75,36.75 L29.75,33.25 L35,33.25 L35,36.75 Z M35,29.75 L29.75,29.75 L29.75,26.25 L35,26.25 L35,29.75 Z M35,22.75 L29.75,22.75 L29.75,19.25 L35,19.25 L35,22.75 Z">
-                                            </path>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
-                    </div>
-                    <span class="nav-link-text ms-1">Pages</span>
-                </a>
-
-                <div class="collapse " id="pagesExamples">
-                    <ul class="nav ms-4 ps-3">
-                        <li class="nav-item ">
-                            <a class="nav-link "
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/pages/pricing-page.html">
-                                <span class="sidenav-mini-icon"> P </span>
-                                <span class="sidenav-normal"> Pricing Page </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link "
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/pages/rtl-page.html">
-                                <span class="sidenav-mini-icon"> R </span>
-                                <span class="sidenav-normal"> RTL </span>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::routeIs('billing') ? 'active' : '' }}"
+                               href="{{ route('billing') }}">
+                                <span class="sidenav-mini-icon">B</span>
+                                <span class="sidenav-normal">Billing</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::routeIs('widget') ? 'active' : '' }}"
-                               href="{{ route('widget') }}">
-                                <span class="sidenav-mini-icon"> W </span>
-                                <span class="sidenav-normal"> Widgets </span>
+                            <a class="nav-link {{ Request::routeIs('invoice') ? 'active' : '' }}"
+                               href="{{ route('invoice') }}">
+                                <span class="sidenav-mini-icon">I</span>
+                                <span class="sidenav-normal">Invoice</span>
                             </a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link "
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/pages/charts.html">
-                                <span class="sidenav-mini-icon"> C </span>
-                                <span class="sidenav-normal"> Charts </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link "
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/pages/sweet-alerts.html">
-                                <span class="sidenav-mini-icon"> S </span>
-                                <span class="sidenav-normal"> Sweet Alerts </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link "
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/pages/notifications.html">
-                                <span class="sidenav-mini-icon"> N </span>
-                                <span class="sidenav-normal"> Notifications </span>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::routeIs('security') ? 'active' : '' }}"
+                               href="{{ route('security') }}">
+                                <span class="sidenav-mini-icon">S</span>
+                                <span class="sidenav-normal">Security</span>
                             </a>
                         </li>
                     </ul>
@@ -209,55 +134,76 @@
 
             <li class="nav-item">
                 <a data-bs-toggle="collapse"
-                    href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/dashboards/default.html#applicationsExamples"
-                    class="nav-link " aria-controls="applicationsExamples" role="button" aria-expanded="false">
-                    <div
-                        class="icon icon-sm shadow-sm border-radius-md bg-white text-center d-flex align-items-center justify-content-center  me-2">
-                        <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <title>settings</title>
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g transform="translate(-2020.000000, -442.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                                    <g transform="translate(1716.000000, 291.000000)">
-                                        <g transform="translate(304.000000, 151.000000)">
-                                            <polygon class="color-background" opacity="0.596981957"
-                                                points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667">
-                                            </polygon>
-                                            <path class="color-background"
-                                                d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z"
-                                                opacity="0.596981957"></path>
-                                            <path class="color-background"
-                                                d="M33.785,11.285 L28.715,6.215 L34.0616667,0.868333333 C32.82,0.315 31.4483333,0 30,0 C24.4766667,0 20,4.47666667 20,10 C20,10.99 20.1483333,11.9433333 20.4166667,12.8466667 L2.435,27.3966667 C0.95,28.7083333 0.0633333333,30.595 0.00333333333,32.5733333 C-0.0583333333,34.5533333 0.71,36.4916667 2.11,37.89 C3.47,39.2516667 5.27833333,40 7.20166667,40 C9.26666667,40 11.2366667,39.1133333 12.6033333,37.565 L27.1533333,19.5833333 C28.0566667,19.8516667 29.01,20 30,20 C35.5233333,20 40,15.5233333 40,10 C40,8.55166667 39.685,7.18 39.1316667,5.93666667 L33.785,11.285 Z">
-                                            </path>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
+                   href="#pageExample"
+                   class="nav-link {{ Request::is('pricing*') || Request::is('widget*') || Request::is('chartjs*') || Request::is('sweet_alert*') || Request::is('notificaion*') ? 'active' : '' }}"
+                   aria-controls="pageExample"
+                   role="button"
+                   aria-expanded="{{ Request::is('pricing*') || Request::is('widget*') || Request::is('chartjs*') || Request::is('sweet_alert*') || Request::is('notificaion*') ? 'true' : 'false' }}">
+                    <div class="icon icon-sm shadow-sm border-radius-md bg-white text-center d-flex align-items-center justify-content-center me-2">
+                        <i class="ni ni-collection" aria-hidden="true"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Applications</span>
+                    <span class="nav-link-text ms-1">Page</span>
                 </a>
-                <div class="collapse " id="applicationsExamples">
+                <div class="collapse {{ Request::is('pricing*') || Request::is('widget*') || Request::is('chartjs*') || Request::is('sweet_alert*') || Request::is('notificaion*') ? 'show' : '' }}" id="pageExample">
                     <ul class="nav ms-4 ps-3">
-                        <li class="nav-item ">
-                            <a class="nav-link "
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/applications/kanban.html">
-                                <span class="sidenav-mini-icon"> K </span>
-                                <span class="sidenav-normal"> Kanban </span>
+                        <li class="nav-item {{ Request::routeIs('pricing') ? 'active' : '' }}">
+                            <a class="nav-link {{ Request::routeIs('pricing') ? 'active' : '' }}" href="{{ route('pricing') }}">
+                                <span class="sidenav-mini-icon"> P </span>
+                                <span class="sidenav-normal"> Pricing </span>
                             </a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link "
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/applications/wizard.html">
+                        <li class="nav-item {{ Request::routeIs('widget') ? 'active' : '' }}">
+                            <a class="nav-link {{ Request::routeIs('widget') ? 'active' : '' }}" href="{{ route('widget') }}">
+                                <span class="sidenav-mini-icon"> W </span>
+                                <span class="sidenav-normal"> Widgets </span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::routeIs('chartjs') ? 'active' : '' }}">
+                            <a class="nav-link {{ Request::routeIs('chartjs') ? 'active' : '' }}" href="{{ route('chartjs') }}">
+                                <span class="sidenav-mini-icon"> C </span>
+                                <span class="sidenav-normal"> Charts </span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::routeIs('sweet_alert') ? 'active' : '' }}">
+                            <a class="nav-link {{ Request::routeIs('sweet_alert') ? 'active' : '' }}" href="{{ route('sweet_alert') }}">
+                                <span class="sidenav-mini-icon"> S </span>
+                                <span class="sidenav-normal"> Sweet Alert </span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::routeIs('notification') ? 'active' : '' }}">
+                            <a class="nav-link {{ Request::routeIs('notification') ? 'active' : '' }}" href="{{ route('notification') }}">
+                                <span class="sidenav-mini-icon"> N </span>
+                                <span class="sidenav-normal"> Notificaion </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a data-bs-toggle="collapse"
+                   href="#applicationExamples"
+                   class="nav-link {{ Request::is('wizard*') || Request::is('datatable*') ? 'active' : '' }}"
+                   aria-controls="applicationExamples"
+                   role="button"
+                   aria-expanded="{{ Request::is('wizard*') || Request::is('datatable*') ? 'true' : 'false' }}">
+                   <div class="icon icon-sm shadow-sm border-radius-md bg-white text-center d-flex align-items-center justify-content-center me-2">
+                    <i class="ni ni-app" aria-hidden="true"></i>
+                </div>
+                <span class="nav-link-text ms-1">Applications</span>
+                </a>
+                <div class="collapse {{ Request::is('wizard*') || Request::is('datatable*') ? 'show' : '' }}" id="applicationExamples">
+                    <ul class="nav ms-4 ps-3">
+                        <li class="nav-item {{ Request::routeIs('wizard') ? 'active' : '' }}">
+                            <a class="nav-link {{ Request::routeIs('wizard') ? 'active' : '' }}" href="{{ route('wizard') }}">
                                 <span class="sidenav-mini-icon"> W </span>
                                 <span class="sidenav-normal"> Wizard </span>
                             </a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link "
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/applications/datatables.html">
+                        <li class="nav-item {{ Request::routeIs('datatable') ? 'active' : '' }}">
+                            <a class="nav-link {{ Request::routeIs('datatable') ? 'active' : '' }}" href="{{ route('datatable') }}">
                                 <span class="sidenav-mini-icon"> D </span>
-                                <span class="sidenav-normal"> DataTables </span>
+                                <span class="sidenav-normal"> Datatables </span>
                             </a>
                         </li>
                         <li class="nav-item ">
@@ -277,6 +223,7 @@
                     </ul>
                 </div>
             </li>
+
             <li class="nav-item">
                 <a data-bs-toggle="collapse"
                     href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/dashboards/default.html#ecommerceExamples"
@@ -387,6 +334,7 @@
                     </ul>
                 </div>
             </li>
+
             <li class="nav-item">
                 <a data-bs-toggle="collapse"
                     href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/dashboards/default.html#projectsExample"
@@ -423,6 +371,7 @@
                     </ul>
                 </div>
             </li>
+
             <li class="nav-item">
                 <a data-bs-toggle="collapse"
                     href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/dashboards/default.html#usersExample"
@@ -480,223 +429,40 @@
                     </ul>
                 </div>
             </li>
+
             <li class="nav-item">
                 <a data-bs-toggle="collapse"
-                    href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/dashboards/default.html#authExamples"
-                    class="nav-link " aria-controls="authExamples" role="button" aria-expanded="false">
-                    <div
-                        class="icon icon-sm shadow-sm border-radius-md bg-white text-center d-flex align-items-center justify-content-center  me-2">
-                        <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <title>document</title>
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                                    <g transform="translate(1716.000000, 291.000000)">
-                                        <g transform="translate(154.000000, 300.000000)">
-                                            <path class="color-background"
-                                                d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z"
-                                                opacity="0.603585379"></path>
-                                            <path class="color-background"
-                                                d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z">
-                                            </path>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
+                   href="#authenticationExample"
+                   class="nav-link {{ Request::is('login*') || Request::is('register*') ? 'active' : '' }}"
+                   aria-controls="authenticationExample"
+                   role="button"
+                   aria-expanded="{{ Request::is('login*') || Request::is('register*')? 'true' : 'false' }}">
+                    <div class="icon icon-sm shadow-sm border-radius-md bg-white text-center d-flex align-items-center justify-content-center me-2">
+                        <i class="ni ni-lock-circle-open" aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">Authentication</span>
                 </a>
-                <div class="collapse " id="authExamples">
+                <div class="collapse {{ Request::is('login*') || Request::is('register*')? 'show' : '' }}" id="authenticationExample">
                     <ul class="nav ms-4 ps-3">
-                        <li class="nav-item ">
-                            <a class="nav-link " data-bs-toggle="collapse" aria-expanded="false"
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/dashboards/default.html#signinExample">
-                                <span class="sidenav-mini-icon"> S </span>
-                                <span class="sidenav-normal"> Sign In <b class="caret"></b></span>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::routeIs('login') ? 'active' : '' }}"
+                               href="{{ route('login') }}">
+                                <span class="sidenav-mini-icon">S</span>
+                                <span class="sidenav-normal">Sign In</span>
                             </a>
-                            <div class="collapse " id="signinExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="">
-                                            <span class="sidenav-mini-icon text-xs"> B </span>
-                                            <span class="sidenav-normal"> Basic </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="">
-                                            <span class="sidenav-mini-icon text-xs"> C </span>
-                                            <span class="sidenav-normal"> Cover </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="">
-                                            <span class="sidenav-mini-icon text-xs"> I </span>
-                                            <span class="sidenav-normal"> Illustration </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link " data-bs-toggle="collapse" aria-expanded="false"
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/dashboards/default.html#signupExample">
-                                <span class="sidenav-mini-icon"> S </span>
-                                <span class="sidenav-normal"> Sign Up <b class="caret"></b></span>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::routeIs('register') ? 'active' : '' }}"
+                               href="{{ route('register') }}">
+                                <span class="sidenav-mini-icon">S</span>
+                                <span class="sidenav-normal">Sign Up</span>
                             </a>
-                            <div class="collapse " id="signupExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/authentication/signup/basic.html">
-                                            <span class="sidenav-mini-icon text-xs"> B </span>
-                                            <span class="sidenav-normal"> Basic </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/authentication/signup/cover.html">
-                                            <span class="sidenav-mini-icon text-xs"> C </span>
-                                            <span class="sidenav-normal"> Cover </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/authentication/signup/illustration.html">
-                                            <span class="sidenav-mini-icon text-xs"> I </span>
-                                            <span class="sidenav-normal"> Illustration </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link " data-bs-toggle="collapse" aria-expanded="false"
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/dashboards/default.html#resetExample">
-                                <span class="sidenav-mini-icon"> R </span>
-                                <span class="sidenav-normal"> Reset Password <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="resetExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/authentication/reset/basic.html">
-                                            <span class="sidenav-mini-icon text-xs"> B </span>
-                                            <span class="sidenav-normal"> Basic </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/authentication/reset/cover.html">
-                                            <span class="sidenav-mini-icon text-xs"> C </span>
-                                            <span class="sidenav-normal"> Cover </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/authentication/reset/illustration.html">
-                                            <span class="sidenav-mini-icon text-xs"> I </span>
-                                            <span class="sidenav-normal"> Illustration </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link " data-bs-toggle="collapse" aria-expanded="false"
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/dashboards/default.html#lockExample">
-                                <span class="sidenav-mini-icon"> L </span>
-                                <span class="sidenav-normal"> Lock <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="lockExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/authentication/lock/basic.html">
-                                            <span class="sidenav-mini-icon text-xs"> B </span>
-                                            <span class="sidenav-normal"> Basic </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/authentication/lock/cover.html">
-                                            <span class="sidenav-mini-icon text-xs"> C </span>
-                                            <span class="sidenav-normal"> Cover </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/authentication/lock/illustration.html">
-                                            <span class="sidenav-mini-icon text-xs"> I </span>
-                                            <span class="sidenav-normal"> Illustration </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link " data-bs-toggle="collapse" aria-expanded="false"
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/dashboards/default.html#StepExample">
-                                <span class="sidenav-mini-icon"> 2 </span>
-                                <span class="sidenav-normal"> 2-Step Verification <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="StepExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/authentication/verification/basic.html">
-                                            <span class="sidenav-mini-icon text-xs"> B </span>
-                                            <span class="sidenav-normal"> Basic </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/authentication/verification/cover.html">
-                                            <span class="sidenav-mini-icon text-xs"> C </span>
-                                            <span class="sidenav-normal"> Cover </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/authentication/verification/illustration.html">
-                                            <span class="sidenav-mini-icon text-xs"> I </span>
-                                            <span class="sidenav-normal"> Illustration </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link " data-bs-toggle="collapse" aria-expanded="false"
-                                href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/dashboards/default.html#errorExample">
-                                <span class="sidenav-mini-icon"> E </span>
-                                <span class="sidenav-normal"> Error <b class="caret"></b></span>
-                            </a>
-                            <div class="collapse " id="errorExample">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/authentication/error/404.html">
-                                            <span class="sidenav-mini-icon text-xs"> E </span>
-                                            <span class="sidenav-normal"> Error 404 </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link "
-                                            href="https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/authentication/error/500.html">
-                                            <span class="sidenav-mini-icon text-xs"> E </span>
-                                            <span class="sidenav-normal"> Error 500 </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
                     </ul>
                 </div>
             </li>
+
+
             <li class="nav-item">
                 <hr class="horizontal dark">
                 <h6 class="ps-4  ms-2 text-uppercase text-xs font-weight-bolder opacity-6">DOCS</h6>
